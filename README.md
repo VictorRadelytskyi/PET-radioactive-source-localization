@@ -75,9 +75,10 @@ We use an object-oriented programming (OOP) approach to organize the analysis pi
 
 ## Example Output
 
-Below is an example of the computed localization for a single radioactive source. All three lines intersect closely at the same point, verifying our approach:
+Below is an example of the computed localization for a single radioactive source. All lines intersect closely at the same point, verifying our approach. The uncertainty of intersection points, as well as the source position is shown with error bars:
 
-![single_source](https://github.com/user-attachments/assets/2e17594a-18ed-4a8c-861a-67d023cad28e)
+![Double_Source_1_Stronger_Source_Zoomed](https://github.com/user-attachments/assets/9ed03deb-ba19-4fe2-ada1-cc7e7be3a524)
+
 
 Because of how coincidence detection works, the radioactive source must lie on the line connecting the two detectors that registered it. Multiple such lines provide an accurate triangulation of the source's location.
 
