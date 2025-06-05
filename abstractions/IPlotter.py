@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 from numpy.typing import ArrayLike
-from typing import Optional, Tuple
+from typing import Optional, Tuple, Dict
 
 class IPlotter(ABC):
     @abstractmethod
@@ -8,15 +8,16 @@ class IPlotter(ABC):
                   x_arr: ArrayLike, 
                   y_arr: ArrayLike,
                   central_point: Optional[Tuple[float, float]] = None,
-                  line_style: str = "--k",
-                  point_style: dict = {'color': 'red', 's': 100}
+                  uncertainties: Optional[Tuple[ArrayLike, ArrayLike]] = None,
+                  line_style: Optional[str] = None,
+                  point_style: Optional[Dict] = None
                   ) -> None: ...
 
     @abstractmethod
-    def highlight_intersection_points(self) -> None: ...
+    def highlight_intersection_points(self, show_uncertainties: bool = False) -> None: ...
 
     @abstractmethod
-    def highlight_source(self) -> None: ...
+    def highlight_source(self, show_uncertainty: bool = False) -> None: ...
 
     @abstractmethod
     def finalize(self, title: str) -> None: ...
